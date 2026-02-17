@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<robot name="mycobot_280pi" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find robot_description)/urdf/mycobot_280pi_arm.urdf.xacro"/>
+
+  <link name="base_link" />
+  <xacro:mycobot_280pi_arm base_link="base_link" flange_link="link6_flange" prefix="">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:mycobot_280pi_arm>
+</robot>
