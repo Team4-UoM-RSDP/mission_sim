@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot name="gripper_with_camera" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find robot_description)/urdf/adaptive_gripper.urdf.xacro"/>
+  <xacro:include filename="$(find robot_description)/urdf/mounted_d435i.urdf.xacro"/>
+
+  <xacro:macro name="gripper_with_camera" params="parent *origin name:=camera use_nominal_extrinsics:=false">
+    <xacro:adaptive_gripper parent="${parent}" prefix="">
+      <xacro:insert_block name="origin"/>
+    </xacro:adaptive_gripper>
+
+    <xacro:mounted_d435i parent="gripper_mount" name="${name}" use_nominal_extrinsics="${use_nominal_extrinsics}">
+      <origin xyz="0 0 0" rpy="3.141592653589793 0 1.5707963267948966" />
+    </xacro:mounted_d435i>
+  </xacro:macro>
+</robot>
