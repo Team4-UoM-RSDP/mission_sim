@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<robot name="adaptive_gripper" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find robot_description)/urdf/adaptive_gripper.urdf.xacro"/>
+
+  <link name="base_link" />
+  <xacro:adaptive_gripper parent="base_link" prefix="">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:adaptive_gripper>
+</robot>

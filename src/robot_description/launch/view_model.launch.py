@@ -61,4 +61,11 @@ def generate_launch_description():
         output='screen',
         arguments=[urdf]
         )
-    return launch.LaunchDescription([rviz_node, model_node])
+    joint_state_node = Node(
+        name='joint_state_publisher',
+        package='joint_state_publisher',
+        executable='joint_state_publisher',
+        output='screen',
+        parameters=[{'robot_description': urdf}]
+        )
+    return launch.LaunchDescription([rviz_node, joint_state_node, model_node])
