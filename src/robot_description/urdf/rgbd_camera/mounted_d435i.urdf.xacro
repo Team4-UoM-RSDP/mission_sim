@@ -14,6 +14,12 @@
 					<color rgba="0.6 0.6 0.6 1.0" />
 				</material>
 			</visual>
+			<collision>
+				<origin xyz="0.006 0.005 ${-mount_collision_padding + (mount_collision_z + 2 * mount_collision_padding) / 2}" rpy="0 0 0" />
+				<geometry>
+					<box size="${mount_collision_x + 2 * mount_collision_padding} ${mount_collision_y + 2 * mount_collision_padding} ${mount_collision_z + 2 * mount_collision_padding}" />
+				</geometry>
+			</collision>
 		</link>
 		<joint name="camera_mount_base_joint" type="fixed">
 			<xacro:insert_block name="origin" />
@@ -22,12 +28,6 @@
 		</joint>
 
 		<link name="${name}_mount">
-			<collision>
-				<origin xyz="0.006 0.005 ${-mount_collision_padding + (mount_collision_z + 2 * mount_collision_padding) / 2 - 0.0145}" rpy="0 0 0" />
-				<geometry>
-					<box size="${mount_collision_x + 2 * mount_collision_padding} ${mount_collision_y + 2 * mount_collision_padding} ${mount_collision_z + 2 * mount_collision_padding}" />
-				</geometry>
-			</collision>
 		</link>
 		<joint name="${name}_mount_top" type="fixed">
 			<parent link="camera_mount_base" />
