@@ -55,8 +55,8 @@ gripper_action_controller:
   ros__parameters:
     joint: ${prefix}gripper_controller
     action_monitor_rate: 20.0
-    goal_tolerance: 0.01
+    goal_tolerance: 0.02
     max_effort: 100.0
-    allow_stalling: false
+    allow_stalling: true
     stall_velocity_threshold: 0.001
-    stall_timeout: 1.0
+    stall_timeout: 3.0
