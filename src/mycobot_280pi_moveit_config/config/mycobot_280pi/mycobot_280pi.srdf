@@ -51,11 +51,11 @@
     </group_state>
 
     <group_state name="half_closed" group="gripper">
-        <joint name="gripper_controller" value="-0.34"/>
+        <joint name="gripper_controller" value="-0.325"/>
     </group_state>
 
     <group_state name="closed" group="gripper">
-        <joint name="gripper_controller" value="-0.50"/>
+        <joint name="gripper_controller" value="-0.65"/>
     </group_state>
 
     <group_state name="home" group="arm_with_gripper">
@@ -65,7 +65,7 @@
         <joint name="link4_to_link5" value="0"/>
         <joint name="link5_to_link6" value="0"/>
         <joint name="link6_to_link6_flange" value="0"/>
-        <joint name="gripper_controller" value="-0.50"/>
+        <joint name="gripper_controller" value="-0.65"/>
     </group_state>
 
     <group_state name="ready" group="arm_with_gripper">

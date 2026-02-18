@@ -178,7 +178,7 @@
 
     <joint name="${prefix}gripper_left3_to_${prefix}gripper_left1" type="revolute">
       <axis xyz="0 0 1"/>
-      <limit effort="${joint_effort}" lower="-0.5" upper="0.5" velocity="${joint_velocity}"/>
+      <limit effort="${joint_effort}" lower="-0.65" upper="0.65" velocity="${joint_velocity}"/>
       <parent link="${prefix}gripper_left3"/>
       <child link="${prefix}gripper_left1"/>
       <origin xyz="-0.027 0.016 0" rpy="0 0 0"/>
@@ -208,7 +208,7 @@
 
     <joint name="${prefix}gripper_right3_to_${prefix}gripper_right1" type="revolute">
       <axis xyz="0 0 1"/>
-      <limit effort="${joint_effort}" lower="-0.5" upper="0.5" velocity="${joint_velocity}"/>
+      <limit effort="${joint_effort}" lower="-0.65" upper="0.65" velocity="${joint_velocity}"/>
       <parent link="${prefix}gripper_right3"/>
       <child link="${prefix}gripper_right1"/>
       <origin xyz="0.027 0.016 0" rpy="0 0 0"/>
