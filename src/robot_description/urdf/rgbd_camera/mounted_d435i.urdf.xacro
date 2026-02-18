@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot name="mounted_d435i" xmlns:xacro="http://www.ros.org/wiki/xacro">
-	<xacro:include filename="$(find robot_description)/urdf/_d435i.urdf.xacro"/>
+	<xacro:include filename="$(find robot_description)/urdf/rgbd_camera/_d435i.urdf.xacro"/>
 
 	<xacro:macro name="mounted_d435i" params="parent *origin name:=camera use_nominal_extrinsics:=false mount_mesh_scale:=1.0 mount_mesh_x:=0.04073 mount_mesh_y:=0.1082 mount_mesh_z:=0.05081 mount_collision_x:=0.04073 mount_collision_y:=0.1082 mount_collision_z:=0.05081">
 		<xacro:property name="mount_collision_padding" value="0.005" />
