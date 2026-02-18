@@ -41,8 +41,10 @@ def generate_launch_description():
     urdf = to_urdf(
         xacro_path,
         {
-            'use_nominal_extrinsics': 'true',
-            'add_plug': 'true',
+            'use_nominal_extrinsics': params.get('use_nominal_extrinsics', 'true'),
+            'add_plug': params.get('add_plug', 'true'),
+            'use_camera': params.get('use_camera', 'false'),
+            'use_gripper': params.get('use_gripper', 'true'),
         },
     )
     rviz_node = Node(
