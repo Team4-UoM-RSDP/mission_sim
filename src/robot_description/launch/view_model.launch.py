@@ -26,7 +26,7 @@ from launch_utils import to_urdf
 def generate_launch_description():
     package_share = get_package_share_directory('robot_description')
     available_urdf_files = [
-        f for f in os.listdir(os.path.join(package_share, 'urdf')) if f.startswith('test_')
+        f for f in os.listdir(os.path.join(package_share, 'urdf/view/')) if f.startswith('view_')
     ]
     params = dict([aa for aa in [aa.split(':=') for aa in sys.argv] if len(aa) == 2])
     if ('model' not in params or params['model'] not in available_urdf_files):
@@ -37,7 +37,7 @@ def generate_launch_description():
         return launch.LaunchDescription()
 
     rviz_config_dir = os.path.join(package_share, 'rviz', 'urdf.rviz')
-    xacro_path = os.path.join(package_share, 'urdf', params['model'])
+    xacro_path = os.path.join(package_share, 'urdf', 'view', params['model'])
     xacro_mappings = {
         'use_nominal_extrinsics': params.get('use_nominal_extrinsics', 'true'),
         'add_plug': params.get('add_plug', 'true'),

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="gripper_with_camera" xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:include filename="$(find robot_description)/urdf/adaptive_gripper.urdf.xacro"/>
-  <xacro:include filename="$(find robot_description)/urdf/mounted_d435i.urdf.xacro"/>
+  <xacro:include filename="$(find robot_description)/urdf/adaptive_gripper/adaptive_gripper.urdf.xacro"/>
+  <xacro:include filename="$(find robot_description)/urdf/rgbd_camera/mounted_d435i.urdf.xacro"/>
 
   <xacro:macro name="gripper_with_camera" params="parent *origin name:=camera use_nominal_extrinsics:=false">
     <xacro:adaptive_gripper parent="${parent}" prefix="">

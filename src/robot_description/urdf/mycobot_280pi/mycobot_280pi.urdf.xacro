@@ -13,7 +13,7 @@
     <xacro:property name="use_gripper_enabled" value="$(arg use_gripper)"/>
     <xacro:property name="use_camera_enabled" value="$(arg use_camera)"/>
 
-    <xacro:include filename="$(find robot_description)/urdf/mycobot_280pi_arm.urdf.xacro"/>
+    <xacro:include filename="$(find robot_description)/urdf/mycobot_280pi/mycobot_280pi_arm.urdf.xacro"/>
     <link name="$(arg prefix)base_link"/>
     <xacro:mycobot_280pi_arm
       base_link="base_link"
@@ -34,7 +34,7 @@
     <xacro:if value="${use_gripper_enabled and not use_camera_enabled}">
         <xacro:property name="current_gripper" value="$(arg gripper_type)"/>
         <xacro:if value="${current_gripper == 'adaptive_gripper'}">
-            <xacro:include filename="$(find robot_description)/urdf/adaptive_gripper.urdf.xacro"/>
+            <xacro:include filename="$(find robot_description)/urdf/adaptive_gripper/adaptive_gripper.urdf.xacro"/>
             <xacro:adaptive_gripper
                 parent="$(arg flange_link)"
                 prefix="$(arg prefix)">
@@ -44,7 +44,7 @@
     </xacro:if>
 
     <xacro:if value="${use_camera_enabled and not use_gripper_enabled}">
-      <xacro:include filename="$(find robot_description)/urdf/gripper_with_camera.urdf.xacro"/>
+      <xacro:include filename="$(find robot_description)/urdf/adaptive_gripper/gripper_with_camera.urdf.xacro"/>
       <xacro:gripper_with_camera parent="$(arg flange_link)" use_nominal_extrinsics="$(arg use_nominal_extrinsics)">
         <origin xyz="0 0 0.034" rpy="1.579 0 0.785398"/>
       </xacro:gripper_with_camera>

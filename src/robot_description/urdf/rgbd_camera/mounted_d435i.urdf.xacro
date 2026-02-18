@@ -8,7 +8,7 @@
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<mesh filename="file://$(find robot_description)/meshes/camera_mount.stl" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
+					<mesh filename="file://$(find robot_description)/meshes/rgbd_camera/camera_mount.stl" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
 				</geometry>
 				<material name="mount_gray">
 					<color rgba="0.6 0.6 0.6 1.0" />

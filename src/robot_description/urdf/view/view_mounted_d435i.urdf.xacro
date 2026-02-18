@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="mounted_d435i" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:arg name="use_nominal_extrinsics" default="false" />
-  <xacro:include filename="$(find robot_description)/urdf/mounted_d435i.urdf.xacro"/>
+  <xacro:include filename="$(find robot_description)/urdf/rgbd_camera/mounted_d435i.urdf.xacro"/>
 
   <link name="base_link" />
   <xacro:mounted_d435i parent="base_link" name="camera" use_nominal_extrinsics="$(arg use_nominal_extrinsics)">
