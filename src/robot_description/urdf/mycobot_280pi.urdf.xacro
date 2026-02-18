@@ -50,10 +50,6 @@
       </xacro:gripper_with_camera>
     </xacro:if>
 
-    <xacro:if value="${use_gripper_enabled and use_camera_enabled}">
-      <xacro:message text="use_gripper and use_camera cannot both be true; enable only one."/>
-    </xacro:if>
-
     <xacro:include filename="$(find robot_description)/urdf/control/gazebo_sim_ros2_control.urdf.xacro" />
     <xacro:load_gazebo_sim_ros2_control_plugin
       robot_name="$(arg robot_name)"
