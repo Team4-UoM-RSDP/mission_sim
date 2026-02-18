@@ -38,14 +38,18 @@ def generate_launch_description():
 
     rviz_config_dir = os.path.join(package_share, 'rviz', 'urdf.rviz')
     xacro_path = os.path.join(package_share, 'urdf', params['model'])
+    xacro_mappings = {
+        'use_nominal_extrinsics': params.get('use_nominal_extrinsics', 'true'),
+        'add_plug': params.get('add_plug', 'true'),
+    }
+    if 'use_camera' in params:
+        xacro_mappings['use_camera'] = params['use_camera']
+    if 'use_gripper' in params:
+        xacro_mappings['use_gripper'] = params['use_gripper']
+
     urdf = to_urdf(
         xacro_path,
-        {
-            'use_nominal_extrinsics': params.get('use_nominal_extrinsics', 'true'),
-            'add_plug': params.get('add_plug', 'true'),
-            'use_camera': params.get('use_camera', 'false'),
-            'use_gripper': params.get('use_gripper', 'true'),
-        },
+        xacro_mappings,
     )
     rviz_node = Node(
         package='rviz2',
