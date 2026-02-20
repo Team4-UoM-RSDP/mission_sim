@@ -88,6 +88,7 @@ def generate_launch_description():
         kinematics_file_path = os.path.join(config_path, 'kinematics.yaml')
         moveit_controllers_file_path = os.path.join(config_path, 'moveit_controllers.yaml')
         srdf_model_path = os.path.join(config_path, f'{robot_name_str}.srdf')
+        pilz_cartesian_limits_file_path = os.path.join(config_path, 'pilz_cartesian_limits.yaml')
 
         # Create MoveIt configuration
         moveit_config = (
@@ -97,7 +98,7 @@ def generate_launch_description():
             .joint_limits(file_path=joint_limits_file_path)
             .robot_description_kinematics(file_path=kinematics_file_path)
             .planning_pipelines(
-                pipelines=["ompl", "stomp"],
+                pipelines=["ompl", "pilz_industrial_motion_planner", "stomp"],
                 default_planning_pipeline="stomp"
             )
             .planning_scene_monitor(
@@ -105,6 +106,7 @@ def generate_launch_description():
                 publish_robot_description_semantic=True,
                 publish_planning_scene=True,
             )
+            .pilz_cartesian_limits(file_path=pilz_cartesian_limits_file_path)
             .to_moveit_configs()
         )
 

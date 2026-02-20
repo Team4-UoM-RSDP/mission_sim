@@ -34,6 +34,7 @@
   <exec_depend>moveit_configs_utils</exec_depend>
   <exec_depend>moveit_planners_stomp</exec_depend>
   <exec_depend>moveit_planners_ompl</exec_depend>
+  <exec_depend>pilz_industrial_motion_planner</exec_depend>
   <exec_depend>gz_ros2_control_demos</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
