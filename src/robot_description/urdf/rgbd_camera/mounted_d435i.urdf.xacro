@@ -15,9 +15,9 @@
 				</material>
 			</visual>
 			<collision>
-				<origin xyz="0.006 0.005 ${-mount_collision_padding + (mount_collision_z + 2 * mount_collision_padding) / 2}" rpy="0 0 0" />
+				<origin xyz="0.006 -0.0075 ${-mount_collision_padding + (mount_collision_z + 2 * mount_collision_padding) / 2}" rpy="0 0 0" />
 				<geometry>
-					<box size="${mount_collision_x + 2 * mount_collision_padding} ${mount_collision_y + 2 * mount_collision_padding} ${mount_collision_z + 2 * mount_collision_padding}" />
+					<box size="${mount_collision_x + 2 * mount_collision_padding} ${mount_collision_y + 2 * mount_collision_padding + 0.025} ${mount_collision_z + 2 * mount_collision_padding}" />
 				</geometry>
 			</collision>
 		</link>
