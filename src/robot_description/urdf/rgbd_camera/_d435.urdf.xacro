@@ -163,6 +163,27 @@ aluminum peripherial evaluation case.
       <link name="${name}_color_optical_frame"/>
     </xacro:if>
 
+    <gazebo reference="${name}_link">
+      <sensor name="${name}" type="rgbd_camera">
+        <camera>
+          <horizontal_fov>1.5184</horizontal_fov>
+          <image>
+            <width>424</width>
+            <height>240</height>
+          </image>
+          <clip>
+            <near>0.05</near>
+            <far>1.5</far>
+          </clip>
+        </camera>
+        <always_on>1</always_on>
+        <gz_frame_id>${name}_link</gz_frame_id>
+        <topic>${name}</topic>
+        <update_rate>5</update_rate>
+        <visualize>true</visualize>
+      </sensor>
+    </gazebo>
+
     <xacro:if value="${add_plug}">
       <xacro:usb_plug parent="${name}_link" name="${name}_usb_plug">
         <origin xyz="${d435_cam_mount_from_center_offset - 0.02095} ${-d435_cam_depth_py - 0.0353} 0" rpy="0 0 0"/>
