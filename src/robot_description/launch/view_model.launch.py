@@ -42,10 +42,6 @@ def generate_launch_description():
         'use_nominal_extrinsics': params.get('use_nominal_extrinsics', 'true'),
         'add_plug': params.get('add_plug', 'true'),
     }
-    if 'use_camera' in params:
-        xacro_mappings['use_camera'] = params['use_camera']
-    if 'use_gripper' in params:
-        xacro_mappings['use_gripper'] = params['use_gripper']
 
     urdf = to_urdf(
         xacro_path,

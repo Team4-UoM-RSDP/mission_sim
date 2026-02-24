@@ -79,17 +79,9 @@ ARGUMENTS = [
                           description='Type of the base'),
     DeclareLaunchArgument('flange_link', default_value='link6_flange',
                           description='Name of the flange link'),
-    DeclareLaunchArgument('gripper_type', default_value='adaptive_gripper',
-                          description='Type of the gripper'),
-    DeclareLaunchArgument('use_camera', default_value='true',
-                          choices=['true', 'false'],
-                          description='Whether to use the RGBD Gazebo plugin for point cloud'),
     DeclareLaunchArgument('use_gazebo', default_value='false',
                           choices=['true', 'false'],
-                          description='Whether to use Gazebo simulation'),
-    DeclareLaunchArgument('use_gripper', default_value='false',
-                          choices=['true', 'false'],
-                          description='Whether to attach a gripper')
+                          description='Whether to use Gazebo simulation')
 ]
 
 
@@ -166,10 +158,7 @@ def generate_launch_description():
         'base_link:=', LaunchConfiguration('base_link'), ' ',
         'base_type:=', LaunchConfiguration('base_type'), ' ',
         'flange_link:=', LaunchConfiguration('flange_link'), ' ',
-        'gripper_type:=', LaunchConfiguration('gripper_type'), ' ',
-        'use_camera:=', LaunchConfiguration('use_camera'), ' ',
-        'use_gazebo:=', LaunchConfiguration('use_gazebo'), ' ',
-        'use_gripper:=', LaunchConfiguration('use_gripper')
+        'use_gazebo:=', LaunchConfiguration('use_gazebo')
     ]), value_type=str)
 
     # Subscribe to the joint states of the robot, and publish the 3D pose of each link.

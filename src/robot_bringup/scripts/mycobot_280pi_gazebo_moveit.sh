@@ -14,7 +14,6 @@ echo "Launching Gazebo simulation..."
 ros2 launch mycobot_280pi_gazebo mycobot_280pi.gazebo.launch.py \
     load_controllers:=true \
     world_file:=empty.world \
-    use_camera:=true \
     use_rviz:=false \
     use_robot_state_pub:=true \
     use_sim_time:=true \
