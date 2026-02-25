@@ -43,7 +43,43 @@
         <joint name="link3_to_link4" value="1.5708"/>
         <joint name="link4_to_link5" value="1.5708"/>
         <joint name="link5_to_link6" value="0"/>
-            <joint name="link6_to_link6_flange" value="2.356"/>
+        <joint name="link6_to_link6_flange" value="2.356"/>
+    </group_state>
+
+    <group_state name="scan_near_0" group="arm">
+        <joint name="link1_to_link2" value="-2.880"/>
+        <joint name="link2_to_link3" value="0"/>
+        <joint name="link3_to_link4" value="0"/>
+        <joint name="link4_to_link5" value="-0.873"/>
+        <joint name="link5_to_link6" value="0"/>
+        <joint name="link6_to_link6_flange" value="2.356"/>
+    </group_state>
+
+    <group_state name="scan_near_1" group="arm">
+        <joint name="link1_to_link2" value="2.880"/>
+        <joint name="link2_to_link3" value="0"/>
+        <joint name="link3_to_link4" value="0"/>
+        <joint name="link4_to_link5" value="-0.873"/>
+        <joint name="link5_to_link6" value="0"/>
+        <joint name="link6_to_link6_flange" value="2.356"/>
+    </group_state>
+
+    <group_state name="scan_far_0" group="arm">
+        <joint name="link1_to_link2" value="-2.880"/>
+        <joint name="link2_to_link3" value="0"/>
+        <joint name="link3_to_link4" value="0"/>
+        <joint name="link4_to_link5" value="-0.262"/>
+        <joint name="link5_to_link6" value="0"/>
+        <joint name="link6_to_link6_flange" value="-0.785"/>
+    </group_state>
+
+    <group_state name="scan_far_1" group="arm">
+        <joint name="link1_to_link2" value="2.880"/>
+        <joint name="link2_to_link3" value="0"/>
+        <joint name="link3_to_link4" value="0"/>
+        <joint name="link4_to_link5" value="-0.262"/>
+        <joint name="link5_to_link6" value="0"/>
+        <joint name="link6_to_link6_flange" value="-0.785"/>
     </group_state>
 
     <group_state name="open" group="gripper">
