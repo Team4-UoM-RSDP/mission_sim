@@ -1,16 +1,31 @@
-# gz topic published by Sensors plugin
+# Camera info from GZ sensor to ROS topic
 - ros_topic_name: "camera/depth/camera_info"
-  gz_topic_name: "camera/camera_info"
+  gz_topic_name: "camera_depth/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
-  lazy: true # Determines whether connections are created immediately at startup (when false) or only when data is actually requested by a subscriber (when true), helping to conserve system resources at the cost of potential initial delays in data flow.
+  lazy: true
 
-# gz topic published by Sensors plugin
+- ros_topic_name: "/camera/color/camera_info"
+  gz_topic_name: "camera_color/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+  lazy: true 
+
+# RGBD pointcloud from GZ sensor to ROS topic
 - ros_topic_name: "camera/depth/color/points"
-  gz_topic_name: "camera/points"
+  gz_topic_name: "camera_depth/points"
   ros_type_name: "sensor_msgs/msg/PointCloud2"
   gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+  lazy: true
+
+# RGB image from GZ sensor to ROS topic
+- ros_topic_name: "/camera/color/image_raw"
+  gz_topic_name: "camera_color/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS
   lazy: true
   
