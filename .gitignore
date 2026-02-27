@@ -210,3 +210,4 @@ __marimo__/
 build/
 install/
 log/
+sim_files/
