@@ -8,8 +8,13 @@
 
   <xacro:include filename="$(find leo_description)/urdf/macros.xacro"/>
 
+  <xacro:include filename="$(find leo_full_description)/urdf/mounting_plate.urdf.xacro"/>
+
   <xacro:leo_sim robot_ns="$(arg robot_ns)"
                  fixed="$(arg fixed)"
                  mecanum_wheels="$(arg mecanum_wheels)"/>
+
+  <xacro:mounting_plate parent="base_link" prefix="$(arg robot_ns)">
+    <origin xyz="0.06 0.02 0" rpy="0 0 0"/> </xacro:mounting_plate>
 
 </robot>
