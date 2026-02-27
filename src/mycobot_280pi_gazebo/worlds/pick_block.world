@@ -85,10 +85,10 @@
       <shadows>false</shadows>
     </scene>
 
-    <!-- Add red_block.dae model at (0, -0.4, 0) -->
+    <!-- Add red block  -->
     <model name="red_block">
-      <static>false</static>
-      <pose>0 -0.4 0 0 0 0</pose>
+      <static>true</static>
+      <pose>0.06 0.28 0.2245 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
