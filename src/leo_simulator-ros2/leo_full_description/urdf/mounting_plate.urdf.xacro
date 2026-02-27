@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:macro name="mounting_plate" params="parent prefix *origin">
+  <xacro:macro name="mounting_plate" params="parent prefix *origin mount_mesh_scale:=1.0">
     
     <joint name="${prefix}mounting_plate_joint" type="fixed">
       <xacro:insert_block name="origin" />
@@ -12,12 +12,12 @@
     <link name="${prefix}mounting_plate_link">
       <visual>
         <geometry>
-          <mesh filename="package://leo_full_description/meshes/mounting_plate.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
+          <mesh filename="$(find leo_full_description)/meshes/mounting_plate_assemb.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://leo_full_description/meshes/mounting_plate.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
+          <mesh filename="$(find leo_full_description)/meshes/mounting_plate_assemb.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
         </geometry>
       </collision>
     </link>

@@ -10,11 +10,16 @@
 
   <xacro:include filename="$(find leo_full_description)/urdf/mounting_plate.urdf.xacro"/>
 
+  <xacro:include filename="$(find leo_full_description)/urdf/nuc_assemb.urdf.xacro"/>
+
   <xacro:leo_sim robot_ns="$(arg robot_ns)"
                  fixed="$(arg fixed)"
                  mecanum_wheels="$(arg mecanum_wheels)"/>
 
-  <xacro:mounting_plate parent="base_link" prefix="$(arg robot_ns)">
+  <xacro:mounting_plate parent="$(arg robot_ns)/base_link" prefix="$(arg robot_ns)/">
     <origin xyz="0.06 0.02 0" rpy="0 0 0"/> </xacro:mounting_plate>
+
+  <xacro:nuc_assemb parent="$(arg robot_ns)/rocker_R_link" prefix="$(arg robot_ns)/">
+    <origin xyz="-0.15 0.02 0" rpy="0 0 0"/> </xacro:nuc_assemb>
 
 </robot>
