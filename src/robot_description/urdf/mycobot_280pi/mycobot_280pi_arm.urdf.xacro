@@ -45,8 +45,8 @@
         <geometry>
           <mesh filename="file://$(find robot_description)/meshes/mycobot_280_pi/link1.dae"/>
         </geometry>
-        <origin xyz="0.0 0 0" rpy="0 0 ${-pi/2}"/>
-      </visual>
+        <origin xyz="0.0 0 0" rpy="0 0 ${-pi}"/>
+      </visual>-
       <collision>
         <geometry>
           <box size="0.1 0.11 0.075"/>
