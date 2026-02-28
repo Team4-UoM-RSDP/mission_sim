@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot name="mycobot_280pi">
     <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="base_link"/>
+    <property name="pi" value="3.1415926535897931" />
 
     <group name="arm">
         <joint name="link1_to_link2"/>
@@ -47,7 +48,7 @@
     </group_state>
 
     <group_state name="scan_near_0" group="arm">
-        <joint name="link1_to_link2" value="-2.880"/>
+        <joint name="link1_to_link2" value="-${164*pi/180}"/>
         <joint name="link2_to_link3" value="0"/>
         <joint name="link3_to_link4" value="0"/>
         <joint name="link4_to_link5" value="-0.873"/>
@@ -56,7 +57,7 @@
     </group_state>
 
     <group_state name="scan_near_1" group="arm">
-        <joint name="link1_to_link2" value="2.880"/>
+        <joint name="link1_to_link2" value="${164*pi/180}"/>
         <joint name="link2_to_link3" value="0"/>
         <joint name="link3_to_link4" value="0"/>
         <joint name="link4_to_link5" value="-0.873"/>
@@ -65,7 +66,7 @@
     </group_state>
 
     <group_state name="scan_far_0" group="arm">
-        <joint name="link1_to_link2" value="-2.880"/>
+        <joint name="link1_to_link2" value="-${164*pi/180}"/>
         <joint name="link2_to_link3" value="0"/>
         <joint name="link3_to_link4" value="0"/>
         <joint name="link4_to_link5" value="-0.262"/>
@@ -74,7 +75,7 @@
     </group_state>
 
     <group_state name="scan_far_1" group="arm">
-        <joint name="link1_to_link2" value="2.880"/>
+        <joint name="link1_to_link2" value="${164*pi/180}"/>
         <joint name="link2_to_link3" value="0"/>
         <joint name="link3_to_link4" value="0"/>
         <joint name="link4_to_link5" value="-0.262"/>
