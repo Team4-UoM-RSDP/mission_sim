@@ -19,7 +19,7 @@ ros2 launch mycobot_280pi_gazebo mycobot_280pi.gazebo.launch.py \
     use_sim_time:=true \
     x:=0.0 \
     y:=0.0 \
-    z:=0.0 \
+    z:=0.258 \
     roll:=0.0 \
     pitch:=0.0 \
     yaw:=0.0 &
