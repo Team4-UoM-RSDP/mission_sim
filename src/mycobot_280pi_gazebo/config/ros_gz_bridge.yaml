@@ -1,12 +1,12 @@
 # Camera info from GZ sensor to ROS topic
-- ros_topic_name: "camera/depth/camera_info"
+- ros_topic_name: "/camera/camera/depth/camera_info"
   gz_topic_name: "camera_depth/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
   lazy: true
 
-- ros_topic_name: "/camera/color/camera_info"
+- ros_topic_name: "/camera/camera/color/camera_info"
   gz_topic_name: "camera_color/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
@@ -14,7 +14,7 @@
   lazy: true 
 
 # RGBD pointcloud from GZ sensor to ROS topic
-- ros_topic_name: "camera/depth/color/points"
+- ros_topic_name: "/camera/camera/depth/points"
   gz_topic_name: "camera_depth/points"
   ros_type_name: "sensor_msgs/msg/PointCloud2"
   gz_type_name: "gz.msgs.PointCloudPacked"
@@ -22,7 +22,7 @@
   lazy: true
 
 # RGB image from GZ sensor to ROS topic
-- ros_topic_name: "/camera/color/image_raw"
+- ros_topic_name: "/camera/camera/color/image_raw"
   gz_topic_name: "camera_color/image"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
