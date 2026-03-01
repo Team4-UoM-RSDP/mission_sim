@@ -122,35 +122,11 @@
       </link>
     </model>
 
-    <!-- Static platform placed beneath the red block to stop it falling -->
-    <model name="red_block_platform">
-      <static>true</static>
-      <!-- Platform centered below the red block (matches red_block x,y). -->
-      <!-- Red block bottom z = 0.2245 - 0.035/2 = 0.207, platform thickness 0.02 -->
-      <!-- Platform pose z = 0.207 - 0.01 = 0.197 (top will be at 0.207) -->
+    <!-- Box to support the red block -->
+    <include>
+      <uri>model://box_for_block</uri>
       <pose>0.0607 0.27 0.197 0 0 0</pose>
-      <link name="link">
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>0.12 0.12 0.02</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.2 0.2 0.2 1</ambient>
-            <diffuse>0.4 0.4 0.4 1</diffuse>
-            <specular>0.1 0.1 0.1 1</specular>
-          </material>
-        </visual>
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>0.12 0.12 0.02</size>
-            </box>
-          </geometry>
-        </collision>
-      </link>
-    </model>
+    </include>
 
   </world>
 </sdf>
