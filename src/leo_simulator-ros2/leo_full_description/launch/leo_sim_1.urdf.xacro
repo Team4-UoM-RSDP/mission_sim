@@ -6,20 +6,32 @@
   <xacro:arg name="robot_ns" default=""/>
   <xacro:arg name="mecanum_wheels" default="false"/>
 
+  
   <xacro:include filename="$(find leo_description)/urdf/macros.xacro"/>
 
   <xacro:include filename="$(find leo_full_description)/urdf/mounting_plate.urdf.xacro"/>
 
   <xacro:include filename="$(find leo_full_description)/urdf/nuc_assemb.urdf.xacro"/>
 
+  <xacro:include filename="$(find leo_full_description)/urdf/lidar.urdf.xacro"/>
+
+  <xacro:include filename="$(find leo_full_description)/urdf/lidar_mount.urdf.xacro"/>
+
   <xacro:leo_sim robot_ns="$(arg robot_ns)"
                  fixed="$(arg fixed)"
                  mecanum_wheels="$(arg mecanum_wheels)"/>
 
   <xacro:mounting_plate parent="$(arg robot_ns)/base_link" prefix="$(arg robot_ns)/">
-    <origin xyz="0.06 0.02 0" rpy="0 0 0"/> </xacro:mounting_plate>
+    <origin xyz="0.0295 0.00458 0.02525" rpy="0 0 1.570796327"/> </xacro:mounting_plate>
 
   <xacro:nuc_assemb parent="$(arg robot_ns)/rocker_R_link" prefix="$(arg robot_ns)/">
-    <origin xyz="-0.15 0.02 0" rpy="0 0 0"/> </xacro:nuc_assemb>
+    <origin xyz="-0.10644 -0.02816 0.0254" rpy="0 0 1.570796327"/> </xacro:nuc_assemb>
+
+  <xacro:lidar parent="$(arg robot_ns)/base_link" prefix="$(arg robot_ns)/">
+    <origin xyz="0.09 0.009 0.023" rpy="0 0 0"/> </xacro:lidar>
+  
+  <xacro:lidar_mount parent="$(arg robot_ns)/base_link" prefix="$(arg robot_ns)/">
+    <origin xyz="0.0775 0.009 0.0025" rpy="0 0 3.141592654"/> </xacro:lidar_mount>
+
 
 </robot>

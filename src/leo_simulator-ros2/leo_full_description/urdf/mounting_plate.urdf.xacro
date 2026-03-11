@@ -12,12 +12,12 @@
     <link name="${prefix}mounting_plate_link">
       <visual>
         <geometry>
-          <mesh filename="$(find leo_full_description)/meshes/mounting_plate_assemb.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
+          <mesh filename="package://leo_full_description/meshes/mounting_plate_assemb.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="$(find leo_full_description)/meshes/mounting_plate_assemb.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
+          <mesh filename="package://leo_full_description/meshes/mounting_plate_assemb.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
         </geometry>
       </collision>
     </link>

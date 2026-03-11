@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="lidar" params="parent prefix *origin mount_mesh_scale:=1.0">
+    
+    <joint name="${prefix}lidar_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="${prefix}lidar_link"/>
+    </joint>
+
+    <link name="${prefix}lidar_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://leo_full_description/meshes/lidar.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://leo_full_description/meshes/lidar.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
+        </geometry>
+      </collision>
+    </link>
+    
+  </xacro:macro>
+
+</robot>
