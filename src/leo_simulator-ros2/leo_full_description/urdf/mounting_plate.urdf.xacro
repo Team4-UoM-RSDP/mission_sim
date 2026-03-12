@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="mounting_plate" params="parent prefix *origin mount_mesh_scale:=1.0">
+    
+    <joint name="${prefix}mounting_plate_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="${prefix}mounting_plate_link"/>
+    </joint>
+
+    <link name="${prefix}mounting_plate_link">
+      <visual>
+        <geometry>
+          <mesh filename="file://$(find leo_full_description)/meshes/mounting_plate_assemb.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="file://$(find leo_full_description)/meshes/mounting_plate_assemb.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${prefix}cobot_manipulator_mount_link">
+		</link>
+		<joint name="$${prefix}cobot_manipulator_mount" type="fixed">
+			<parent link="${prefix}mounting_plate_link" />
+			<child link="${prefix}cobot_manipulator_mount_link" />
+            <origin xyz="0.004425 -0.001 0.03475" rpy="0 0 0" />
+		</joint>
+  </xacro:macro>
+
+</robot>

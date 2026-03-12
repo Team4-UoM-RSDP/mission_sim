@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name='arena_bounds'>
+    <link name='link'>
+      <visual name='visual'>
+        <geometry>
+          <mesh>
+            <uri>model://arena_bounds/meshes/arena_bound.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <geometry>
+          <mesh>
+            <uri>model://arena_bounds/meshes/arena_bound.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <enable_wind>false</enable_wind>
+    </link>
+    <pose>1.9132978518837522e-09 -4.8826270230276406e-11 0.00049697369571514028 2.2274627872049547e-10 8.0487195225189497e-09 -1.2509690292828324e-11</pose>
+    <static>false</static>
+    <self_collide>false</self_collide>
+  </model>
+</sdf>

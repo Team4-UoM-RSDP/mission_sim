@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="nuc_assemb" params="parent prefix *origin mount_mesh_scale:=1.0">
+    
+    <joint name="${prefix}nuc_assemb_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="${prefix}nuc_assemb_link"/>
+    </joint>
+
+    <link name="${prefix}nuc_assemb_link">
+      <visual>
+        <geometry>
+          <mesh filename="file://$(find leo_full_description)/meshes/nuc_assmb.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="file://$(find leo_full_description)/meshes/nuc_assmb.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
+        </geometry>
+      </collision>
+    </link>
+    
+  </xacro:macro>
+
+</robot>
