@@ -22,15 +22,13 @@
       </collision>
     </link>
 
-    <link name="${prefix}cobot_mount_link">
-    </link>
-    <joint name="${prefix}cobot_mount" type="fixed">
-      <xacro:insert_block name="origin" />
-      <parent link="${prefix}mounting_plate_link"/>
-      <child link="${prefix}cobot_mount_link"/>
-      <origin xyz="0.0 0.0 0.03" rpy="0 0 0"/>
-    </joint>
-    
+    <link name="${prefix}cobot_manipulator_mount_link">
+		</link>
+		<joint name="$${prefix}cobot_manipulator_mount" type="fixed">
+			<parent link="${prefix}mounting_plate_link" />
+			<child link="${prefix}cobot_manipulator_mount_link" />
+            <origin xyz="0.004425 -0.001 0.03475" rpy="0 0 0" />
+		</joint>
   </xacro:macro>
 
 </robot>
