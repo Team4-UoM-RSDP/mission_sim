@@ -12,12 +12,12 @@
     <link name="${prefix}lidar_mount_link">
       <visual>
         <geometry>
-          <mesh filename="package://leo_full_description/meshes/lidar_mount.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
+          <mesh filename="file://$(find leo_full_description)/meshes/lidar_mount.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://leo_full_description/meshes/lidar_mount.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
+          <mesh filename="file://$(find leo_full_description)/meshes/lidar_mount.dae" scale="${mount_mesh_scale} ${mount_mesh_scale} ${mount_mesh_scale}" />
         </geometry>
       </collision>
     </link>
