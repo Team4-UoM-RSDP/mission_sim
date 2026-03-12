@@ -122,6 +122,7 @@ def spawn_robot(context: LaunchContext, namespace: LaunchConfiguration):
 
 
 def generate_launch_description():
+    
     name_argument = DeclareLaunchArgument(
         "robot_ns",
         default_value="",
@@ -133,5 +134,27 @@ def generate_launch_description():
     return LaunchDescription(
         [name_argument, OpaqueFunction(function=spawn_robot, args=[namespace])]
     )
+'''
+def generate_launch_description():
 
+    pkg_share_path = os.path.join(get_package_share_directory('leo_full_description'), '..')
 
+    name_argument = DeclareLaunchArgument(
+        "robot_ns",
+        default_value="",
+        description="Robot namespace",
+    )
+
+    namespace = LaunchConfiguration("robot_ns")
+
+    return LaunchDescription([
+        # This line fixes the [Err] [SystemPaths.cc] issue
+        AppendEnvironmentVariable(
+            name='GAZEBO_MODEL_PATH',
+            value=pkg_share_path
+        ),
+
+        name_argument, 
+        OpaqueFunction(function=spawn_robot, args=[namespace])
+    ])
+    '''
