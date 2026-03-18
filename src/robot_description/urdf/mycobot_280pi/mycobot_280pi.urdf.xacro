@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mycobot_280pi">
     <xacro:arg name="robot_name" default="mycobot_280pi"/>
     <xacro:arg name="add_world" default="true"/>
-    <xacro:arg name="cobot_ns" default="cobot"/>
+    <xacro:arg name="cobot_ns" default=""/>
     <xacro:arg name="flange_link" default="link6_flange"/>
     <xacro:arg name="use_nominal_extrinsics" default="true"/>
     <xacro:arg name="use_gazebo" default="false"/>
