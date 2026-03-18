@@ -2,9 +2,9 @@
 <robot name="d435i_mounted" xmlns:xacro="http://www.ros.org/wiki/xacro">
 	<xacro:include filename="$(find robot_description)/urdf/rgbd_camera/_d435i.urdf.xacro"/>
 
-	<xacro:macro name="d435i_mounted" params="parent *origin name:=camera use_nominal_extrinsics:=false mount_mesh_scale:=1.0 mount_mesh_x:=0.04073 mount_mesh_y:=0.1082 mount_mesh_z:=0.05081 mount_collision_x:=0.04073 mount_collision_y:=0.1082 mount_collision_z:=0.05081">
+	<xacro:macro name="d435i_mounted" params="parent *origin name:=camera prefix:='' use_nominal_extrinsics:=false mount_mesh_scale:=1.0 mount_mesh_x:=0.04073 mount_mesh_y:=0.1082 mount_mesh_z:=0.05081 mount_collision_x:=0.04073 mount_collision_y:=0.1082 mount_collision_z:=0.05081">
 		<xacro:property name="mount_collision_padding" value="0.005" />
-		<link name="camera_mount_base">
+		<link name="${prefix}camera_mount_base">
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
@@ -21,21 +21,21 @@
 				</geometry>
 			</collision>
 		</link>
-		<joint name="camera_mount_base_joint" type="fixed">
+		<joint name="${prefix}camera_mount_base_joint" type="fixed">
 			<xacro:insert_block name="origin" />
 			<parent link="${parent}" />
-			<child link="camera_mount_base" />
+			<child link="${prefix}camera_mount_base" />
 		</joint>
 
-		<link name="${name}_mount">
+		<link name="${prefix}${name}_mount">
 		</link>
-		<joint name="${name}_mount_top" type="fixed">
-			<parent link="camera_mount_base" />
-			<child link="${name}_mount" />
+		<joint name="${prefix}${name}_mount_top" type="fixed">
+			<parent link="${prefix}camera_mount_base" />
+			<child link="${prefix}${name}_mount" />
             <origin xyz="0 0 0.0145" rpy="0 0 0" />
 		</joint>
 
-		<xacro:sensor_d435i parent="${name}_mount" name="${name}" use_nominal_extrinsics="${use_nominal_extrinsics}">
+		<xacro:sensor_d435i parent="${prefix}${name}_mount" name="${prefix}${name}" use_nominal_extrinsics="${use_nominal_extrinsics}">
 			<origin xyz="0.006 0 0" rpy="0 0 0" /> // Not sure of exact offset, delta x from central hole on camera mount to center of camera screw mount
 		</xacro:sensor_d435i>
 	</xacro:macro>
