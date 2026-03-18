@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+       name="leo_cobot_sim">
+  
+  <!-- Separate namespaces to avoid naming conflicts -->
+  <xacro:arg name="robot_ns" default="leo"/>
+  <xacro:arg name="cobot_ns" default="cobot"/>
+  <xacro:arg name="fixed" default="false"/>
+  <xacro:arg name="mecanum_wheels" default="false"/>
+  
+  <xacro:include filename="$(find leo_full_description)/launch/leo_sim_1.urdf.xacro"/>
+  <xacro:arg name="add_world" default="false"/>
+  <xacro:include filename="$(find robot_description)/urdf/mycobot_280pi/mycobot_280pi.urdf.xacro"/>
+
+  <!-- Link mycobot base_link to leo cobot manipulator mount -->
+  <joint name="mycobot_to_mount_joint" type="fixed">
+    <parent link="$(arg robot_ns)/cobot_manipulator_mount_link"/>
+    <child link="$(arg cobot_ns)/base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>
