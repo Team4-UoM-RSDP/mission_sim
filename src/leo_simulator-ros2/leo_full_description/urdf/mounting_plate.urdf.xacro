@@ -21,6 +21,7 @@
         </geometry>
       </collision>
     </link>
+    
 
     <link name="${prefix}cobot_manipulator_mount_link">
 		</link>

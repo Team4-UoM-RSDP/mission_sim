@@ -1,4 +1,5 @@
-<sdf version='1.10'>
+<?xml version="1.0"?>
+<sdf version='1.8'>
   <world name='leo_arena'>
     <physics name='1ms' type='ignored'>
       <max_step_size>0.001</max_step_size>
@@ -10,10 +11,14 @@
       filename="gz-sim-physics-system"
       name="gz::sim::systems::Physics">
     </plugin>
+    
     <plugin
       filename="gz-sim-sensors-system"
       name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
     </plugin>
+
+    
     <plugin
       filename="gz-sim-scene-broadcaster-system"
       name="gz::sim::systems::SceneBroadcaster">
